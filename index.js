@@ -1,17 +1,10 @@
 /**
- * @param {number} n
+ * @param {number[]} nums
  * @return {number}
  */
-var hammingWeight = function (n) {
-  let count = 0;
-
-  while (n !== 0) {
-    n &= n - 1; // This is the key operation
-    count++;
-  }
-
-  return count;
+var singleNumber = function (nums) {
+  return nums.reduce((acc, prev) => acc ^ prev, 0);
 };
 
-const ans = hammingWeight(2147483645);
-console.log("ans", ans);
+const ans = singleNumber([4, 1, 2, 1, 2]);
+console.log(ans);
